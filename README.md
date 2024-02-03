@@ -1,10 +1,10 @@
 # Project 4: Jupyter Notebook for Exploratory Data Analysis (EDA)
 
 ## Overview
-Name: Tesfamariam
-Date: 2024-02-02
+- Name: Tesfamariam
+- Date: 2024-02-02
 
-Project Objectives:
+## Project Objectives:
 The primary goal of Project 4 is to gain proficiency in the following areas:
 - Setting up a Jupyter Notebook environment
 - Conducting exploratory data analysis (EDA)
