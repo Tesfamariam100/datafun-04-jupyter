@@ -15,7 +15,7 @@ The primary goal of Project 4 is to gain proficiency in the following areas:
 
 +  GitHub Repository: datafun-04-jupyter
 +  Documentation: README.md
-+  Notebook: yourname_eda.ipynb
++  Notebook: Tesfamariam_eda.ipynb
   
 ## Getting started
 ### Here's what I did before starting the project:
