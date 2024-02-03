@@ -1,59 +1,74 @@
-# datafun-04-jupyter
-This repository contains the resources and instructions for starting a new Python project with a virtual environment.
-## How to Install and Run the Project
+# Project 4: Jupyter Notebook for Exploratory Data Analysis (EDA)
 
-To set up and run the project locally, follow these steps:
+## Overview
+Name: Tesfamariam
+Date: 2024-02-02
 
-1. **Create and Activate the Virtual Environment:**
-   - Open your Project folder in the terminal (PowerShell or Command Prompt).
-   - Create a virtual environment named `.venv` by running:
-     ```
-     python -m venv .venv
-     ```
-   - Activate the virtual environment:
-     - On Windows:
-       ```
-       .\.venv\Scripts\Activate
-       ```
-     - On macOS and Linux:
-       ```
-       source .venv/bin/activate
-       ```
+Project Objectives:
+The primary goal of Project 4 is to gain proficiency in the following areas:
+- Setting up a Jupyter Notebook environment
+- Conducting exploratory data analysis (EDA)
+- Visualizing data using matplotlib and seaborn
+- Documenting insights and observations
+- 
+## Deliverables
 
-2. **Install Dependencies:**
-   - Choose one of the following options based on your preference:
-   
-     - **Option 1: Install packages separately:**
-       ```
-       py -m pip install jupyterlab
-       py -m pip install numpy
-       py -m pip install pandas
-       py -m pip install matplotlib 
-       py -m pip install seaborn
-       py -m pip install scipy
-       ```
-     
-     - **Option 2: Install packages on one line:**
-       ```
-       py -m pip install jupyterlab numpy pandas matplotlib seaborn scipy
-       ```
-     
-     - **Option 3: Install packages using requirements.txt:**
-       - Create a file named `requirements.txt` in the root folder of your repository.
-       - Add the following content to `requirements.txt`:
-         ```
-         jupyterlab 
-         numpy 
-         pandas
-         matplotlib 
-         seaborn 
-         scipy
-         ```
-       - Install the packages listed in the requirements file with the following command:
-         ```
-         py -m pip install -r requirements.txt
-         ```
+- GitHub Repository: datafun-04-jupyter
+- Documentation: README.md
+- Notebook: yourname_eda.ipynb
+  
+## Getting started
 
-3. **Run the Project:**
-   - After installing the dependencies, you can now run your project using the appropriate commands.
-   - Ensure your virtual environment is activated when running your project.
+Complete the following steps before starting the project
+- Create a New GitHub Repository: I create a new GitHub repository called datafun-04-jupyter.
+- Set up Your Local Environment: I clone the repository to my local machine and set up a virtual environment.
+- Install Dependencies: I install the required Python packages like pandas, matplotlib, and seaborn.
+- Start Jupyter Notebook: I launch Jupyter Notebook and create a new notebook file named yourname_eda.ipynb.
+
+## Load the Iris dataset into DataFrame
+df = sns.load_dataset('iris')
+
+## Inspect first rows of the DataFrame
+print(df.head())
+Initial Data Inspection: Display the first 10 rows, shape, and data types of each column.
+
+python
+Copy code
+print(df.head(10))
+print(df.shape)
+print(df.dtypes)
+Initial Descriptive Statistics: Use the DataFrame describe() method to display summary statistics.
+
+python
+Copy code
+print(df.describe())
+Initial Data Distribution for Numerical Columns: Plot histograms for numerical columns.
+
+python
+Copy code
+df['sepal_length'].hist()
+df.hist()
+plt.show()
+Initial Data Distribution for Categorical Columns: Display value counts for categorical columns.
+
+python
+Copy code
+for col in df.select_dtypes(include=['object', 'category']).columns:
+    sns.countplot(x=col, data=df)
+    plt.title(f'Distribution of {col}')
+    plt.show()
+Initial Data Transformation and Feature Engineering: Perform necessary transformations on the data.
+
+python
+Copy code
+### Example: Renaming a column
+df.rename(columns={'sepal_length': 'Sepal Length'}, inplace=True)
+
+### Example: Adding a new column
+df['Sepal Area'] = df['Sepal Length'] * df['sepal_width']
+Initial Visualizations: Create various chart types using seaborn and matplotlib.
+
+python
+Copy code
+sns.pairplot(df, hue='species')
+plt.show()
